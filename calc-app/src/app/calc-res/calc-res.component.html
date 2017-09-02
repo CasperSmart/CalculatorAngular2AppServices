@@ -1,0 +1,17 @@
+
+<div class="container calc-res-wrapper">
+    <div class="calc-wrapper2">
+           <h4 class="result2">
+                {{number1}} {{sign || "?"}}  {{number2}} = {{result || ""}}
+           </h4>
+           <div class="btn-group btn-group-lg col-lg-offset-3" style="padding-bottom:20px;">
+            <button type="button" class="btn btn-primary" (click)="operation('+')">+</button>
+            <button type="button" class="btn btn-primary" (click)="operation('-')">-</button>
+            <button type="button" class="btn btn-primary" (click)="operation('*')">*</button>
+            <button type="button" class="btn btn-primary" (click)="operation('/')">/</button>
+            <button type="button" class="btn btn-primary" (click)="clear()">C</button>
+        </div>
+    </div>
+    <app-calc></app-calc>
+</div>
+ 
