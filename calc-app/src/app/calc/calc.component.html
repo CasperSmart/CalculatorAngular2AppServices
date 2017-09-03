@@ -1,10 +1,10 @@
 <div class="calc-wrapper1">
       <div class="row">
           <h4 class="col-lg12 result">
-              {{(number1 && number2) != NaN? number1:''}}
-              {{(number1 && number2) != NaN? '+':''}}
-              {{(number1 && number2) != NaN? number2:''}}
-              {{(number1 && number2 && result) != NaN? '= ' + result:''}} 
+              {{(number1 == null || number2 == null)?'': number1}}
+              {{(number1 == null || number2 == null)?'': '+'}}
+              {{(number1 == null || number2 == null)?'': number2}}
+              {{(number1 == null || number2 == null || result == null)?'':'= ' + result}} 
           </h4>
       </div>
       <div class="row">
