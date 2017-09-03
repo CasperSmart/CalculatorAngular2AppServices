@@ -1,14 +1,13 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { DataService } from '../services/data.service';
 
-
 @Component({
   selector: 'app-calc-res',
   templateUrl: './calc-res.component.html',
   styleUrls: ['./calc-res.component.css']
 })
-export class CalcResComponent implements OnInit {
 
+export class CalcResComponent {
   number1 = 6;
   number2 = 3;
 
@@ -22,17 +21,14 @@ export class CalcResComponent implements OnInit {
 
   constructor(private _dataServise: DataService) { }
 
-  ngOnInit() {}
-
-  operation (sign) :void
-  {
+  operation (sign) : void {
      this._dataServise.operator = sign;
      this._dataServise.operand1 = this.number1;
      this._dataServise.operand2 = this.number2;
      this._dataServise.calculate();
   }
   
-  clear(){
+  clear() : void {
     this._dataServise.clear()
   }
 }

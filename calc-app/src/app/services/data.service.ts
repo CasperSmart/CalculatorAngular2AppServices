@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { IDataService } from '../models/idata-service';
 
 @Injectable()
-export class DataService {
+export class DataService implements IDataService {
 
   private _operator : string
   private _operand1 : number
@@ -40,20 +41,20 @@ export class DataService {
     this._result = value;
   }
   
-  private _calculate = {
-    '+': function (x, y) { return x + y },
-    '-': function (x, y) { return x - y },
-    '*': function (x, y) { return x * y },
-    '/': function (x, y) { return x / y },
+  compute = {
+    '+': (x:number, y:number) => x + y,
+    '-': (x:number, y:number) => x - y,
+    '*': (x:number, y:number) => x * y,
+    '/': (x:number, y:number) => x / y,
    }
 
   constructor() { }
   
-   calculate(): void {
-        this._result = this._calculate[this._operator](this._operand1,this._operand2);
+   calculate() {
+      this._result = this.compute[this._operator](this._operand1,this._operand2);
    }
 
-   clear(): void {
+   clear() {
      this._operand1 = NaN;
      this._operand2 = NaN;
      this._result = NaN;

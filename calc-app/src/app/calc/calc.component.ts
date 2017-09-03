@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -7,13 +7,14 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./calc.component.css'],
   providers: [DataService]
 })
-export class CalcComponent implements OnInit {
+
+export class CalcComponent {
 
    @Input() number1 = 2;
    @Input() number2 = 2;
    sign = '+';
 
-   get result() {
+   get result(): number {
        return this._dataServise.result;
    }
 
@@ -24,17 +25,11 @@ export class CalcComponent implements OnInit {
     this._dataServise.calculate();
    }
   
-  onNumbersChange()
-  {
-    if(this.number1 && this.number2)
-      {
+  onNumbersChange() {
+    if(!isNaN(this.number1 && this.number2)){
           this._dataServise.operand1 = this.number1;
           this._dataServise.operand2 = this.number2;
           this._dataServise.calculate();
       }
   }
-
-  ngOnInit() {
-  }
-
 }
