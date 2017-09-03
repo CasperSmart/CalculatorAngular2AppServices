@@ -5,10 +5,10 @@
                 {{number1}} {{sign || "?"}}  {{number2}} = {{result || ""}}
            </h4>
            <div class="btn-group btn-group-lg col-lg-offset-3" style="padding-bottom:20px;">
-            <button type="button" class="btn btn-primary" (click)="operation('+')">+</button>
-            <button type="button" class="btn btn-primary" (click)="operation('-')">-</button>
-            <button type="button" class="btn btn-primary" (click)="operation('*')">*</button>
-            <button type="button" class="btn btn-primary" (click)="operation('/')">/</button>
+            <button type="button" class="btn btn-primary" (click)="operation(operators.add)">+</button>
+            <button type="button" class="btn btn-primary" (click)="operation(operators.subtract)">-</button>
+            <button type="button" class="btn btn-primary" (click)="operation(operators.multiply)">*</button>
+            <button type="button" class="btn btn-primary" (click)="operation(operators.divide)">/</button>
             <button type="button" class="btn btn-primary" (click)="clear()">C</button>
         </div>
     </div>

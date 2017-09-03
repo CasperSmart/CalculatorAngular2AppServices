@@ -19,6 +19,10 @@ export class CalcResComponent {
       return this._dataServise.operator;
   }
 
+  get operators():object {
+      return this._dataServise.operators;
+  }
+
   constructor(private _dataServise: DataService) { }
 
   operation (sign) : void {

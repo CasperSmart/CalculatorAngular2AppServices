@@ -1,5 +1,5 @@
 export interface IDataService {
-     compute : object;
+     operators : object;
      calculate(): void;
      clear(): void;
 }
